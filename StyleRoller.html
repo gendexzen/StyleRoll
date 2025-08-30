@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Style Reroll</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #f0f0f0;
+    }
+    .roll {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .style {
+      font-size: 28px;
+      color: #333;
+    }
+    button {
+      font-size: 18px;
+      padding: 10px 20px;
+      margin-top: 30px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="roll" id="roll">Tap button to roll</div>
+  <div class="style" id="styleResult"></div>
+  <button onclick="rollStyle()">Reroll Style</button>
+
+  <script>
+    const styles = [
+      "Realistic", "Cinematic", "Digital Art", "Vintage Film", "3D Cartoon", "Horror",
+      "Sci-Fi", "Fantasy", "Neonpunk", "Cartoon", "3D Anime", "Storybook",
+      "Classic", "Ink drawing", "Pixel art", "Low poly", "Watercolour", "Oil painting",
+      "Abstract", "Anime", "Art Nouveau", "Baroque", "Cubism", "Expressionism",
+      "Impressionism", "Medieval art", "Pop art", "Lineart", "Paper Craft", "Claymation",
+      "Ukiyo-e", "Claude Monet", "Paul Gauguin", "Salvador Dali"
+    ];
+
+    function rollStyle() {
+      const roll = Math.floor(Math.random() * 34);
+      document.getElementById("roll").textContent = `Rolled: ${roll + 1}`;
+      document.getElementById("styleResult").textContent = styles[roll];
+    }
+
+    // Roll once on load
+    window.onload = rollStyle;
+  </script>
+</body>
+</html>
